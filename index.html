@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ankit Cars - Showroom</title>
+<style>
+body{margin:0; font-family:Arial; background:#0f0f0f; color:white;}
+nav{background:#000; padding:15px; position:sticky; top:0; display:flex; justify-content:space-between; align-items:center; z-index:10;}
+nav a{color:white; margin:0 12px; text-decoration:none; font-weight:bold;}
+nav a:hover{color:#00ffcc;}
+.section{padding:50px 20px; text-align:center;}
+#cars{display:flex; flex-wrap:wrap; justify-content:center;}
+.card{background:#1e1e1e; width:280px; margin:15px; border-radius:12px; padding:15px; transition:0.3s;}
+.card img{width:100%; height:180px; object-fit:cover; border-radius:10px;}
+.card:hover{transform:scale(1.05); box-shadow:0 0 20px #00ffcc;}
+button{background:#00ffcc; border:none; padding:10px 18px; border-radius:8px; font-weight:bold; cursor:pointer;}
+#contact{background:#0a192f;}
+
+@media (max-width: 600px){
+  nav{flex-direction:column;}
+  .card{width:90%;}
+  h1{font-size:22px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div><b>ANKIT CARS 🚗</b></div>
+<div>
+<a href="#home">Home</a>
+<a href="#cars">Cars</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<div id="home" class="section">
+<h1>Welcome to Ankit's Car Showroom</h1>
+<p>Best Cars in Gujarat | By Thakor Ankit Ratnaji</p>
+<p style="color:#00ffcc;">Govt Polytechnic Gandhinagar</p>
+</div>
+
+<div id="cars" class="section">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500">
+<h3>Thar 4x4</h3><p>₹15 Lakh</p><button onclick="calcEMI(1500000)">EMI Check</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=500">
+<h3>Mustang GT</h3><p>₹75 Lakh</p><button onclick="calcEMI(7500000)">EMI Check</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500">
+<h3>BMW X5</h3><p>₹90 Lakh</p><button onclick="calcEMI(9000000)">EMI Check</button>
+</div>
+</div>
+
+<h3 style="text-align:center; margin-top:20px;">EMI: ₹<span id="emi">0</span>/month for ₹<span id="price">0</span></h3>
+
+<div id="about" class="section" style="background:#1a1a1a;">
+<h2>About Us</h2>
+<p style="max-width:600px; margin:auto;">Hu Thakor Ankit, Diploma IT 3rd Year. 15 divas ma banavelu a car showroom project have JS, Flexbox, Media Query thi upgraded karyu che. Dream: Full Stack Developer.</p>
+</div>
+
+<div id="contact" class="section">
+<h2>Contact Us</h2>
+<p>📍 Ahmedabad, Gujarat</p>
+<p>📞 63xxxxxxxx | 🌐 ankit6419.github.io</p>
+<button onclick="alert('Thank you! Test Drive Booked!')">Book Test Drive</button>
+<br><br>
+<a href="index.html" style="color:#00ffcc;">← Back to Main Portfolio</a>
+</div>
+
+<script>
+function calcEMI(price){
+ document.getElementById("price").innerText=price;
+ document.getElementById("emi").innerText=Math.round((price*1.08)/60);
+ window.scrollTo(0, document.body.scrollHeight/2);
+}
+</script>
+
+</body>
+</html>
